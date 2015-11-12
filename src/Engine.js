@@ -106,6 +106,7 @@ var Engine = function () {
         colonne = position.charCodeAt(0) - 97;
         ligne = position.charCodeAt(1) - 49;
         t[colonne][ligne] = "undefined"
+        nbBilles--;
     }
 
 

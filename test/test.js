@@ -24,3 +24,10 @@ PalettoTestCase.prototype.testStory3 = function () {
     plateau.deleteBille("a6")
     assertTrue(plateau.getBilleColor("a6") == false)
 };
+
+PalettoTestCase.prototype.testStory4 = function () {
+    var plateau = new Engine();
+    //36 BIlles
+    plateau.init()
+    //assertTrue(plateau.getBilleColor("a6") == false)
+};
