@@ -16,3 +16,10 @@ PalettoTestCase.prototype.testStory2 = function () {
     plateau.init()
     assertTrue(plateau.selectBille("jaune") == "jaune") //Fin de l'histoire 2
 };
+
+PalettoTestCase.prototype.testStory3 = function () {
+    var plateau = new Engine();
+    //36 BIlles
+    plateau.init()
+    assertTrue(plateau.getBielleColor("a6") == false) 
+};
