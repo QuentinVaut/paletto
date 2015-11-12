@@ -14,5 +14,5 @@ PalettoTestCase.prototype.testStory2 = function () {
     var plateau = new Engine();
     //36 BIlles
     plateau.init()
-    assertTrue(plateau.selectBille("jaune") == "jaune")
+    assertTrue(plateau.selectBille("jaune") == "jaune") //Fin de l'histoire 2
 };
