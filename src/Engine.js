@@ -92,6 +92,22 @@ var Engine = function () {
         }
     }
 
+    this.getBilleColor = function (position) {
+        colonne = position.charCodeAt(0) - 97;
+        ligne = position.charCodeAt(1) - 49;
+        if(t[colonne][ligne] != "undefined") {
+            return t[colonne][ligne]
+        } else {
+            return false
+        }
+    }
+
+    this.deleteBille = function (position) {
+        colonne = position.charCodeAt(0) - 97;
+        ligne = position.charCodeAt(1) - 49;
+        t[colonne][ligne] = "undefined"
+    }
+
 
 }
 

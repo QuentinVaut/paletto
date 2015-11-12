@@ -21,5 +21,6 @@ PalettoTestCase.prototype.testStory3 = function () {
     var plateau = new Engine();
     //36 BIlles
     plateau.init()
-    assertTrue(plateau.getBielleColor("a6") == false) 
+    plateau.deleteBille("a6")
+    assertTrue(plateau.getBilleColor("a6") == false)
 };
