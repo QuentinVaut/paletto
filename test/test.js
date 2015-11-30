@@ -29,7 +29,8 @@ PalettoTestCase.prototype.testStory4 = function () {
     var plateau = new Engine();
     //36 BIlles
     plateau.init()
-    var list = plateau.couleurJouable()
+    plateau.deleteBille("a1")
+    plateau.deleteBille("f6")
+    var list = plateau.couleursJouable()
     assertTrue(list.indexOf("noir") >= 0 || list.indexOf("blanche") >= 0 || list.indexOf("bleu") >= 0  )
-    //assertTrue(plateau.getBilleColor("a6") == false)
 };

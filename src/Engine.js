@@ -109,8 +109,40 @@ var Engine = function () {
         nbBilles--;
     }
 
+  /*  this.couleursJouable = function () {
+        var couleurs = ["noir","blanche","bleu"];
+        return couleurs;
+    }*/
 
+    this.couleursJouable = function () {
+        //lecture colonne par colonne
+        var count;
+        var list = []
+        for (var i = 0; i < 6; i++) {
+            for (var j = 0; j < 6; j++) {
+                count = 0
+                if (i != 0 && t[i - 1][j] == "undefined") {
+                    count++
+                }
+                if (i != t.length - 1 && t[i + 1][j] == "undefined") {
+                    count++
+                }
+                if (j != 0 &&  t[i][j - 1] == "undefined") {
+                    count++
+                }
+                if (j != t.length - 1 && t[i][j + 1] == "undefined") {
+                    count++
+                }
+                if(count<=2) {
+                        //couleur de la bille en IJ dans un tableau et que la couleur n'est pas dans la liste
+                        if(list.indexOf(t[i][j]) == -1) //Test couleur
+                        {
+                            list.push(t[i][j])
+                            console.log(t[i][j])
+                        }
+                }
+            }
+        }
+        return list
+    }
 }
-
-
-
