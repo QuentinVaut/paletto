@@ -32,5 +32,5 @@ PalettoTestCase.prototype.testStory4 = function () {
     plateau.deleteBille("a1")
     plateau.deleteBille("f6")
     var list = plateau.couleursJouable()
-    assertTrue(list.indexOf("noir") >= 0 || list.indexOf("blanche") >= 0 || list.indexOf("bleu") >= 0  )
+    assertTrue(list.indexOf("noir") >= 0 || list.indexOf("blanche") >= 0 || list.indexOf("bleu") >= 0)
 };
