@@ -57,6 +57,28 @@ var Engine = function () {
         this.ajouterBilles("f6", "noir")
     }
 
+    this.init2 = function () {
+        this.ajouterBilles("a4", "rouge")
+
+        this.ajouterBilles("b4", "noir")
+        this.ajouterBilles("b5", "vert")
+
+        this.ajouterBilles("c3", "bleu")
+        this.ajouterBilles("c4", "rouge")
+        this.ajouterBilles("c5", "jaune")
+        this.ajouterBilles("c6", "noir")
+
+        this.ajouterBilles("d1", "bleu")
+        this.ajouterBilles("d2", "rouge")
+        this.ajouterBilles("d3", "blanc")
+
+        this.ajouterBilles("e1", "rouge")
+        this.ajouterBilles("e2", "jaune")
+        this.ajouterBilles("e3", "noir")
+
+        this.ajouterBilles("f1", "blanc")
+    }
+
     this.getNbBilles = function () {
         return nbBilles;
 
@@ -138,11 +160,64 @@ var Engine = function () {
                         if(list.indexOf(t[i][j]) == -1) //Test couleur
                         {
                             list.push(t[i][j])
-                            console.log(t[i][j])
+                            console.log("t["+i+"]"+"J["+j+"]"+t[i][j])
                         }
                 }
             }
         }
         return list
+    }
+
+    this.voisins = function () {
+        //lecture colonne par colonne
+        var count;
+        var list = []
+        for (var i = 0; i < 6; i++) {
+            for (var j = 0; j < 6; j++) {
+                if (t[i][j] != -1) {
+                    console.log("t[" + i + "]" + "J[" + j + "]" + t[i][j])
+                    count = 0
+                    if (i != 0 && t[i - 1][j] == "undefined") {
+                        count++
+                    }
+                    if (i != t.length - 1 && t[i + 1][j] == "undefined") {
+                        count++
+                    }
+                    if (j != 0 && t[i][j - 1] == "undefined") {
+                        count++
+                    }
+                    if (j != t.length - 1 && t[i][j + 1] == "undefined") {
+                        count++
+                    }
+                    if (count <= 2) {
+                        if (t[i - 1][j] == -1 && t[i + 1][j] == -1) {
+                            return false
+
+                        }
+                        if (t[i][j - 1] == -1 && t[i][j + 1] == -1) {
+                            return false
+
+                        }
+                        if (t[i][j - 1] == -1 && t[i + 1][j] == -1 && t[i + 1][j - 1]) {
+                            return false
+
+                        }
+                        if (t[i][j + 1] == -1 && t[i + 1][j] == -1 && t[i + 1][j + 1]) {
+                            return false
+
+                        }
+                        if (t[i - 1][j] == -1 && t[i][j + 1] == -1 && t[i - 1][j + 1]) {
+                            return false
+
+                        }
+                        if (t[i - 1][j] == -1 && t[i][j - 1] == -1 && t[i - 1][j + 1]) {
+                            return false
+
+                        }
+                    }
+                }
+            }
+        }
+        return true
     }
 }
